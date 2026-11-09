@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+/* Akimo brand tokens, sampled from the current commission sheet (see /mnt/project-files/akimo/tokens.css). */
+@theme {
+  --color-page: #f7ded1;        /* outer peach background */
+  --color-surface: #fefbfa;     /* paper card */
+  --color-ink: #404040;         /* text, ≈10:1 on surface */
+  --color-ink-muted: #6b6362;
+  --color-peach: #f6c4ac;       /* buttons: use ink text, white fails contrast */
+  --color-peach-soft: #e6c0a8;  /* dotted borders */
+  --color-peach-deep: #d5967a;  /* decoration only */
+  --color-peach-ink: #a0523a;   /* links and accents, ≈5.4:1 on surface */
+
+  --font-display: var(--font-kanit), "Noto Sans Thai", sans-serif;
+  --font-sans: var(--font-noto-thai), "Kanit", system-ui, sans-serif;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  background: var(--color-page);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  text-wrap: balance;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-peach-ink);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
